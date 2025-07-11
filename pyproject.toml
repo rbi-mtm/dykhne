@@ -1,0 +1,26 @@
+[build-system]
+requires = ['setuptools', 'setuptools-scm']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'dykhne'
+version = '0.0.1'
+authors = [
+    {name = 'Juraj Ovčar', email = 'juraj.ovcar@gmail.com'},
+]
+description = 'dykhne: Numerical evaluation of Dykhne formula'
+readme = 'README.rst'
+requires-python = '>=3.13'
+keywords = ['dykhne', 'formula', 'adiabatic', 'nonadiabatic', 'transition', 'complex', 'analysis', 'numerical']
+license = {text = 'GPL-3.0-only'}
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: GNU General Public License version 3',
+]
+dependencies = [
+    'importlib-metadata; python_version>="3.13"',
+    'click',
+]
+
+[tool.setuptools.dynamic]
+version = {attr = 'dykhne.__version__'}
