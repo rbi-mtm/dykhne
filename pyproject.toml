@@ -20,6 +20,9 @@ classifiers = [
 dependencies = [
     'importlib-metadata; python_version>="3.13"',
     'click',
+	'tomli-w',
+	'numpy',
+	'matplotlib'
 ]
 
 [tool.setuptools.dynamic]
