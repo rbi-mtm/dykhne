@@ -22,7 +22,8 @@ dependencies = [
     'click',
 	'tomli-w',
 	'numpy',
-	'matplotlib'
+	'matplotlib',
+	'scipy'
 ]
 
 [tool.setuptools.dynamic]
