@@ -38,7 +38,7 @@ STEP = 0.1
 # ---------------------------------------------------------------------------
 A_VALUES = [0.5, 1.0, 2.0]
 B_VALUES = [0.5, 1.0, 2.0]
-T_VALUES = [1.0, 2.0, 3.0]   # half-width of the AAA fitting window
+T_VALUES = [1.0, 2.0, 3.0, 5.0, 7.0, 10.0]   # half-width of the AAA fitting window
 
 
 def compute_delta_e(a, b, t):
@@ -94,18 +94,19 @@ def print_header():
         f"{'a':>5}  {'b':>5}  {'T':>5}  "
         f"{'P_numerical':>14}  {'P_exact':>14}  "
         f"{'rel. error':>12}  "
-        f"{'root (Im)':>12}  {'Im(X)':>12}"
+        f"{'root (Im)':>12}  {'Im root exact':>14}  {'Im(X)':>12}"
     )
-    print("-" * 95)
+    print("-" * 112)
 
 
 def print_row(a, b, T, P, P_exact, root, integral):
     rel_err = abs(P - P_exact) / P_exact if P_exact > 0 else float('nan')
+    im_root_exact = b / a
     print(
         f"{a:>5.2f}  {b:>5.2f}  {T:>5.1f}  "
         f"{P:>14.8f}  {P_exact:>14.8f}  "
         f"{rel_err:>12.2e}  "
-        f"{root.imag:>12.6f}  {np.imag(integral):>12.6f}"
+        f"{root.imag:>12.6f}  {im_root_exact:>14.6f}  {np.imag(integral):>12.6f}"
     )
 
 
